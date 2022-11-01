@@ -5,6 +5,8 @@ Vendor: Avery Dennison
 
 Print Model: Monarch M9855
 
+Software Version: MonarchNet2
+
 Type: Unauthenticated Remote attack
 
 We have identified that the web portal of "Monarch M9855" printer device product is vulnerable to Reflective Cross-Site Scripting (XSS). This is due to that the Web App fails to adequately sanitize malicious strings. By leveraging this issue, an attacker is able to cause arbitrary HTML and JavaScript code to be executed in a user's browser within the security context of the affected site. This attack can be used in conjunction with a social engineering techniques.
