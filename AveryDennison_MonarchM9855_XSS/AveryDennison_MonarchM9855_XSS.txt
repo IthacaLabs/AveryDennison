@@ -5,7 +5,7 @@ Vendor: Avery Dennison
 
 Print Model: Monarch M9855
 
-Software Version: MonarchNet2
+Software Version: Monarch 7411 Print Adapter, Firmware Ver. CAMO-7.68 (2011.06.02), Boot Ver. 7.3
 
 Type: Unauthenticated Remote attack
 
